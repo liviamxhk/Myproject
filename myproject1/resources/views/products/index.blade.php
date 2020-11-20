@@ -7,9 +7,6 @@
                 <h2>My Planner</h2>
                 <h4>To-Do List</h4>
             </div>
-            <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('products.create') }}"> Create New To-Do</a>
-            </div>
         </div>
     </div>
    
@@ -47,6 +44,10 @@
         </tr>
         @endforeach
     </table>
+
+    <div class="pull-right">
+                <a class="btn btn-success" href="{{ route('products.create') }}"> Create New To-Do</a>
+            </div>
   
     {!! $products->links() !!}
       
