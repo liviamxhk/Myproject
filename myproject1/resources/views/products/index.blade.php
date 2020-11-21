@@ -3,13 +3,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-12 margin-tb">
-            <div class="pull-left">
-                <h2>My Planner</h2>
-                <h4>To-Do List</h4>
-            </div>
-        </div>
-    </div>
-    @if (Route::has('login'))
+        @if (Route::has('login'))
                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
                         <a href="{{ route('logout') }}" class="btn btn-primary">Logout</a>
@@ -22,6 +16,13 @@
                     @endauth
                 </div>
     @endif
+            <div class="pull-left">
+                <h2>My Planner</h2>
+                <h4>To-Do List</h4>
+            </div>
+        </div>
+    </div>
+    
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
             <p>{{ $message }}</p>
