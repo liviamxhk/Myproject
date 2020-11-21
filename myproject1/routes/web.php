@@ -18,8 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('products', ProductController::class);
+Route::get('logout', function() {
+  Auth::logout();
+
+  return redirect('/');
+});
+
+Route::middleware(['auth:sanctum', 'verified'])->resource('products', ProductController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return redirect('products');
 })->name('dashboard');
